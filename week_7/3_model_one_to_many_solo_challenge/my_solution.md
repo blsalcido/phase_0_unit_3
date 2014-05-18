@@ -15,7 +15,7 @@ The relationship between `users` and `tweets` is:
 One to many because a tweet can only belong to one user and users make many tweets. 
 
 ## Release 3: Schema Design
-![tweets](http://i.imgur.com/BX4fUdl)
+[tweets](http://i.imgur.com/BX4fUdl)
 
 ## Release 4: SQL Statements
 

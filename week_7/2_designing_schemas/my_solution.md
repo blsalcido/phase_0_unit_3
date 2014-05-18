@@ -13,17 +13,17 @@
 
 
 ## Release 2: One to One Schema
-![one to one](http://i.imgur.com/AoA3Gkk)
+one to one](http://i.imgur.com/AoA3Gkk)
 
 
 ## Release 3: Many to Many Schema
-![many to many](http://i.imgur.com/Loh6Saq)
+[many to many](http://i.imgur.com/Loh6Saq)
 
 
 ## Release 4: Design your own Schema
 Description of what you're modeling: 
-![one to one](http://i.imgur.com/QLVkzhF)
-![many to many](http://i.imgur.com/lp1lDTh)
+[one to one](http://i.imgur.com/QLVkzhF)
+[many to many](http://i.imgur.com/lp1lDTh)
 
 ## Release 5: Reflection
 <!-- 
