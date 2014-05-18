@@ -26,8 +26,8 @@ Description of what you're modeling:
 [many to many](http://i.imgur.com/lp1lDTh)
 
 ## Release 5: Reflection
-<!-- 
+
 Still getting familiar with keys. I think that was the weirdest part of this challenge for me. 
 I attempted to connect various fields to one another but, could never make it work without 
 assigning a foreign key. Otherwise, this was rather simple. I hope I got the markdown right 
-for displaying these images!!!  -->
+for displaying these images!!! 
