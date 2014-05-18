@@ -5,11 +5,11 @@
 
 
 ## Release 0: Student Roster Schema
-![student roster](http://i.imgur.com/vqqsL7Y)
+[student roster](http://i.imgur.com/vqqsL7Y)
 
 
 ## Release 1: One to Many Schema
-![one to many](http://i.imgur.com/ihk5naS)
+[one to many](http://i.imgur.com/ihk5naS)
 
 
 ## Release 2: One to One Schema
