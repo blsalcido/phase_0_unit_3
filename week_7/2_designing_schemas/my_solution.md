@@ -13,7 +13,7 @@
 
 
 ## Release 2: One to One Schema
-one to one](http://i.imgur.com/AoA3Gkk)
+[one to one](http://i.imgur.com/AoA3Gkk)
 
 
 ## Release 3: Many to Many Schema
