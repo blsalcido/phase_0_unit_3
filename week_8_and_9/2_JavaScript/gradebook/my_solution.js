@@ -7,7 +7,7 @@ variables match (i.e., 'Joseph' is the first element in students; his scores are
 
 Do not alter the students and scores code.
 
-I worked on this challenge [by myself, with:]
+I worked on this challenge [by myself]
 
 */
 
@@ -20,39 +20,100 @@ var scores = [ [80, 70, 70, 100],
 
 
 
-
-
-
 // __________________________________________
 // Write your code below.
 
 
+// var average = function(numArray) {
+//   var sum = 0; 
+//   for (var i = 0; i < numArray.length; i++){
+//       sum = sum+numArray[i]
+//   }
+//   var avg = sum/numArray.length; 
+//   console.log(avg) 
+// };
 
 
+
+// var gradebook = {
+// Joseph: {
+//       testScores:[80, 70, 70, 100]
+//   },
+//   Susan: {
+//       testScores: [85, 80, 90, 90]
+//   },  
+//   William: {
+//       testScores: [75, 70, 80, 75]
+//   },
+//   Elizabeth: {
+//       testScores: [100, 90, 95, 85]
+//   },
+
+//   addScore: function(name, newScore){
+//         this[name].testScores = this[name].testScores.concat(newScore);
+//   }
+
+// }
+
+
+// average(gradebook.Joseph.testScores) 
+// gradebook.addScore("Joseph",50) 
+// gradebook.Joseph.testScores 
+// average(gradebook.Joseph.testScores) 
 
 
 // __________________________________________
 // Refactored Solution
 
+var average = function(numArray) {
+  var sum = 0; 
+  for (var i = 0; i < numArray.length; i++){
+      sum = sum+numArray[i]
+  }
+  var avg = sum/numArray.length; 
+  console.log(avg) 
+};
 
 
 
+var gradebook = {
+ Joseph: {
+    testScores:[80, 70, 70, 100]
+  },
+  Susan: {
+    testScores: [85, 80, 90, 90]
+  },  
+  William: {
+    testScores: [75, 70, 80, 75]
+  },
+  Elizabeth: {
+    testScores: [100, 90, 95, 85]
+  },
+
+  addScore: function(name, newScore){
+    this[name].testScores = this[name].testScores.concat(newScore);
+  }
+
+}
 
 
-
+average(gradebook.Joseph.testScores) 
+gradebook.addScore("Joseph",50) 
+gradebook.Joseph.testScores 
+average(gradebook.Joseph.testScores) 
+gradebook.Joseph.average
 
 // __________________________________________
 // Reflect
 
-
-
-
-
-
-
+// Can't find anything to refactor here. It took a while to get #concat to work 
+// becuase I originally had "gradebook.testScores.concat(newScore)"; which doesn't
+// work. So, I did some research and found a way to access the object property 
+// by using "this". I might pair to brainstorm way to refactor this. 
 
 
 // __________________________________________
+
 // Driver Code:  Do not alter code below this line.
 
 
