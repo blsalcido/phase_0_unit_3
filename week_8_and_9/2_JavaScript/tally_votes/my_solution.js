@@ -1,6 +1,6 @@
 // U3.W8-9: Gradebook from Names and Scores
 
-// I worked on this challenge [by myself, with:]
+// I worked on this challenge [with: Greg White]
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -40,6 +40,14 @@ var voteCount = {
   treasurer: {}
 }
 
+function addCount(position,name){
+    if (!  voteCount[position].hasOwnProperty(name)){  //example  voteCount[President] does not have Bob yet,
+        voteCount[position][name] = 0
+    }
+    voteCount[position][name] += 1 
+} 
+
+
 /* The name of each student receiving a vote for an office should become a property 
 of the respective office in voteCount.  After Alex's votes have been tallied, 
 voteCount would be ...
@@ -65,10 +73,108 @@ var officers = {
 
 // Pseudocode
 
+// 1) parse through the nested votes object and tally up the votes into the votecount structure
+// 2) for each position in the votecount structure
+        // find the max value
+        // get the key that has that max value   #stuck here with function getKeyFromValue
+        // this key is the winner 
+        // assign this person to the officers structure
+
 
 // __________________________________________
 // Initial Solution
 
+// Tally the votes in voteCount.
+voteCount = {
+  president: {},
+  vicePresident: {},
+  secretary: {},
+  treasurer: {}
+}
+
+
+function addCount(position,name){
+    if (!  voteCount[position].hasOwnProperty(name)){  //example  voteCount[President] does not have Bob yet,
+        voteCount[position][name] = 0
+    }
+    voteCount[position][name] += 1 
+} 
+
+
+
+var officers = {
+  president: undefined,
+  vicePresident: undefined,
+  secretary: undefined,
+  treasurer: undefined
+}
+
+
+//start
+
+// Tally the votes in voteCount.
+voteCount = {
+  president: {Bob: 1, Hermann:5},
+  vicePresident: {},
+  secretary: {},
+  treasurer: {}
+}
+
+function getValues(obj){
+    values = []
+    for (key in obj) {
+        values.push(obj[key]);
+    }
+    return values
+}
+    
+
+
+
+function findMaxValue(){  //example  give it "president"
+    //for name in VoteCount["president"]{
+    //    console.log(VoteCount["president"][name])
+    //}
+    //values = Object.values(voteCount["president"]);
+    values = getValues(voteCount["president"])
+    maxValue = Math.max.apply(null,values)
+    console.log(maxValue);
+}
+
+//return the key that contains the specified value
+//for example voteCount["president"] has keys : "Bob" and "Herman" with values of 1 and 5
+//getKeyFromValue(voteCount["president"],5) -> "Herman"
+function getKeyFromValue(obj,target_value){
+    keys = Object.keys(obj)
+    console.log(keys)
+    values = getValues(obj)
+    console.log(values)
+    key
+    for (key in keys){
+        
+        value = obj[key]
+        console.log(value)
+        if (value == target_value){
+            console.log(key)
+            return key
+        }
+    }
+    
+}
+    
+
+
+for (voter in votes){
+    //console.log("voter "+ voter)
+    positions = votes[voter]  //object of alex's positions  ->{ president: "Bob", vicePresident: "Devin", secretary: "Gail", treasurer: "Kerry" }
+    
+    for (position in positions){  //position = president first iteration
+        //console.log("position "+ position)
+        pick = votes[voter][position]   // votes["Alex"]["president"] -->  returns "BOB
+        //console.log("pick "+ pick)   // pick bob
+        addCount(position,pick)
+    }
+} 
 
 
 
@@ -78,6 +184,33 @@ var officers = {
 // __________________________________________
 // Refactored Solution
 
+for(var position in officers) {
+  //go through each vote to nominate a person for a position
+  for(var vote in votes){
+    //is the person already nominated?
+    if(votes[vote][position] in voteCount[position]){
+      //go into voteCount for the current position and add one to the value for the person nominated
+      voteCount[position][votes[vote][position]] +=1;
+    }
+    else{
+      //add them in as a key in the hash and give it the value of 1
+      voteCount[position][votes[vote][position]] = 1;
+    }
+  }
+
+//current max holds the highest vote count yet
+  var currentMax = 0;
+  var positionHolder = "";
+
+  for(var contender in voteCount[position]){
+    if(voteCount[position][contender] > currentMax){
+      currentMax = voteCount[position][contender];
+      positionHolder = contender;
+    }
+  }
+
+  officers[position] = positionHolder;
+}
 
 
 
@@ -86,8 +219,17 @@ var officers = {
 // __________________________________________
 // Reflection
 
+// I sort of hate JS but, I think that may be because I don't have much 
+// experience using it with HTML. I find I am always taking an approach to 
+// solving using ruby methodology but, JS is limited in ways Ruby is not.
 
+// I did the Initial Solution by myself and the final with Greg. I'm So 
+// grateful that he was willing to guide me through things because I 
+// feel really weak in this language. 
 
+// I dislike writing the syntax but also think it looks kinda cool. 
+
+// Need to move on for the day now...
 
 
 
