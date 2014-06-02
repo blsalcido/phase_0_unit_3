@@ -53,13 +53,11 @@ end
 
 # 1. DRIVER TESTS/ASSERT STATEMENTS GO BELOW THIS LINE
 
-# def assert 
-#   raise "Argument Error" unless yeild 
-# end  
+def assert 
+  raise "Argument Error" unless yeild 
+end  
 
-guy = Person.new
 
-puts guy.do_stuff
 
 # 5. Reflection 
 
